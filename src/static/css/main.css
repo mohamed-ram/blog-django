@@ -1,0 +1,30 @@
+.main-container{
+  padding-top: 57px;
+  background-color:grey;
+}
+
+.content-container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.info-side{
+  position: fixed;
+  background-color: lightsalmon;
+  height: calc(100vh - 57px);
+  width: 25%;
+  
+}
+
+.content-side{
+  background-color: lightskyblue;
+  flex: 1;
+  font-size: 50px;
+  margin-left: 25%;
+}
+
+.featured-side{
+  height: calc(100vh - 57px);
+  width: 25%;
+}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ block.super }}| All Posts.
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+  {% if query %}
+    <h1 class="display-1 text-info">Posts Include "{{ query }}" {{ count }}</h1>
+  {% else %}
+    <h1 class="display-1 text-info">All Posts {{ count }}</h1>
+  {% endif %}
+
+
+  {% for post in posts %}
+    <a href="{% url "posts:post_detail" slug=post.slug %}">
+      <div class="row">
+        <div class="col-lg-6 col-sm-8 mx-auto">
+          <div class="card mb-5">
+            {% if post.image.url %}
+              <img src="{{ post.image.url }}" class="card-img-top">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.content }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+
+</div>
+{% endblock %}
